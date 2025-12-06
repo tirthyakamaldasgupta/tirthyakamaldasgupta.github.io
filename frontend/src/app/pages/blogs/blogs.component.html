@@ -1,0 +1,48 @@
+<h2 class="text-lg font-medium text-700 mb-4">Blogs</h2>
+
+@for (blog of blogs; track blog.title) {
+<p-card styleClass="mb-3 blog-card">
+  <ng-template #title>
+    {{ blog.title }}
+  </ng-template>
+
+  <div class="text-sm text-600 mt-1 flex align-items-center gap-2">
+    <span class="font-medium">{{ blog.author }}</span>
+    <span>•</span>
+    <span class="text-500">{{ formatDate(blog.publishedOn) }}</span>
+  </div>
+
+  <p>
+    {{ blog.description }}
+  </p>
+
+  @if (blog.tags.length > 0) {
+  <div class="flex gap-2 mt-3 flex-wrap">
+    @for (tag of blog.tags; track tag) {
+    <p-chip label="{{ tag }}" class="blog-tag"></p-chip>
+    }
+  </div>
+  }
+
+  <div class="mt-2 text-sm text-500">Access the complete article via:</div>
+
+  <ng-template pTemplate="footer">
+    <div class="flex gap-2 mt-2 flex-wrap">
+      @for (link of blog.links; track link.url) {
+      <a
+        pButton
+        class="p-button-sm font-bold blog-btn"
+        [class.medium-btn]="link.label === 'Medium'"
+        [class.devto-btn]="link.label === 'Dev.to'"
+        [href]="link.url"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ link.label }}
+        <i class="pi pi-arrow-right ml-2"></i>
+      </a>
+      }
+    </div>
+  </ng-template>
+</p-card>
+}

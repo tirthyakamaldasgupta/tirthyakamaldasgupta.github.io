@@ -1,0 +1,39 @@
+@import "primeicons/primeicons.css";
+
+.blog-tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: #eef2f7;
+  color: #555;
+}
+
+.blog-btn {
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  will-change: transform, opacity;
+}
+
+.medium-btn {
+  background-color: #2a2a2a !important;
+  border: 1px solid #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+.devto-btn {
+  background-color: #3b49df !important;
+  border: 1px solid #3b49df !important;
+  color: #fff !important;
+}
+
+.blog-btn:hover {
+  opacity: 0.88;
+  transform: scale(1.04);
+}
+
+.blog-btn i {
+  color: inherit !important;
+}
