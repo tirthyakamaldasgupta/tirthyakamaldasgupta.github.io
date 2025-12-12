@@ -133,7 +133,7 @@
 
 <ul class="list-group">
 	{#each experiences as experience}
-		<li class="list-group-item experience-item">
+		<li class="list-group-item">
 			<div class="d-flex gap-3">
 				<img src={experience.logo} alt="" class="company-logo" />
 				<div class="right-column flex-grow-1 px-3">
@@ -174,12 +174,6 @@
 		background: #fff;
 		padding: 6px;
 		box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
-	}
-
-	.experience-item {
-		padding: 1.5rem;
-		border-radius: 12px;
-		margin-bottom: 1.5rem;
 	}
 
 	.arrow-bullets {
